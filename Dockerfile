@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.346.3-2
+FROM jenkins/jenkins:2.365
 COPY docker-archive-keyring.gpg /usr/share/keyrings/docker-archive-keyring.gpg 
 USER root
 RUN apt-get update \
