@@ -1,4 +1,5 @@
-FROM jenkins/jenkins:2.365
+ARG TAG
+FROM jenkins/jenkins:$TAG
 COPY docker-archive-keyring.gpg /usr/share/keyrings/docker-archive-keyring.gpg 
 USER root
 RUN apt-get update \

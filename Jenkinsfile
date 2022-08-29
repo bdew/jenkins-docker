@@ -14,7 +14,7 @@ pipeline {
                     docker.withRegistry('', 'docker_hub_bdew1') {
                         sh 'docker context create builder'
                         sh 'docker buildx create --name multibuilder --use --driver docker-container builder'
-                        sh 'docker buildx build --platform=linux/arm64,linux/amd64 -t bdew1/jenkins-docker:latest --push .'
+                        sh 'docker buildx build --platform=linux/arm64,linux/amd64 --build-arg TAG=${tag} -t bdew1/jenkins-docker:${tag} --push .'
                     }
                 }                
             }
